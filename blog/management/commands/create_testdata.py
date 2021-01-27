@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 
@@ -24,8 +24,7 @@ class Command(BaseCommand):
     help = 'create test datas'
 
     def handle(self, *args, **options):
-        user = \
-            get_user_model().objects.get_or_create(email='test@test.com', username='测试用户',
+        user = get_user_model().objects.get_or_create(email='test@test.com', username='测试用户',
                                                    password='test!q@w#eTYU')[0]
 
         pcategory = Category.objects.get_or_create(name='我是父类目', parent_category=None)[0]
